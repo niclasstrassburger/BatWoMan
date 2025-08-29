@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link id="favicon" rel="icon" href="/Logo_square_BatWoMan_transparent.png" />
+  <script>
+    function updateFavicon(theme) {
+      const favicon = document.getElementById('favicon');
+      if (theme === 'dark') {
+        favicon.href = '/Logo_square_BatWoMan_transparent.png';
+      } else {
+        favicon.href = '/Logo_square_BatWoMan_transparent.png';
+      }
+    }
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    updateFavicon(mediaQuery.matches ? 'dark' : 'light');
+
+    mediaQuery.addEventListener('change', (e) => {
+      updateFavicon(e.matches ? 'dark' : 'light');
+    });
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electrode manufacturing</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

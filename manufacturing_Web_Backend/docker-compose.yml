@@ -1,0 +1,56 @@
+################################################################################
+# Node-RED Stack or Compose
+################################################################################
+# docker stack deploy node-red --compose-file docker-compose-node-red.yml
+# docker-compose -f docker-compose-node-red.yml -p myNoderedProject up
+################################################################################
+version: "3.7"
+
+services:
+  database-server:
+    container_name: 'manufacturing_batwoman' 
+    restart: always
+    image: 'postgres:latest'
+    volumes:
+      - ./database-server/postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=p@ssw0rd
+      - POSTGRES_DB=proteo
+    ports:
+      - '5434:5432'
+  adminer:
+    container_name: proteo-adminer
+    depends_on:
+      - database-server
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    
+  frontend:
+    container_name: proteo-frontend
+    build: ./manufacturing_Web_Frontend
+    restart: always
+    volumes: 
+      - ./frontend:/app
+    #  - /etc/letsencrypt:/certs/letsencrypt
+    # env_file:
+    #   - frontend/.env
+    ports:
+      - 443:80
+  
+  backend:
+    container_name: proteo-backend
+    build: 
+      context: ./manufacturing_Web_Backend
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - database-server
+    volumes: 
+      - ./backend:/app
+    #  - /etc/letsencrypt:/certs/letsencrypt
+    # env_file:
+    #   - backend/.env
+    ports:
+      - 8000:8000

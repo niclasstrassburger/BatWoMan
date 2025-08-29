@@ -1,0 +1,12 @@
+/**
+ * src/styles/settings.scss
+ *
+ * Configures SASS variables and Vuetify overwrites
+ */
+
+// https://vuetifyjs.com/features/sass-variables/`
+@use 'vuetify/settings' with ($color-picker-swatch-color-width: 24px,
+    $color-picker-swatch-color-margin: 2px 2px,
+    $color-picker-controls-padding: 8px,
+    $color-picker-swatches-border-radius: 2px,
+);

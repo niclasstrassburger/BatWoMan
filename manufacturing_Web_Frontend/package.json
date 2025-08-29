@@ -1,0 +1,45 @@
+{
+  "name": "manufacturing_frontend",
+  "version": "0.3.3",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@mdi/font": "7.0.96",
+    "axios": "^1.6.8",
+    "core-js": "^3.34.0",
+    "plotly.js-dist": "2.32.0",
+    "roboto-fontface": "*",
+    "sweetalert2": "^11.10.8",
+    "vue": "^3.5.0",
+    "vue-axios": "^3.5.2",
+    "vue3-tour": "^1.0.1",
+    "vuetify": "^3.7.0",
+    "xlsx": "0.17.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.22.0",
+    "pinia": "^2.1.7",
+    "sass-embedded": "^1.79.3",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-fonts": "^1.1.1",
+    "unplugin-vue-components": "^0.26.0",
+    "unplugin-vue-router": "^0.8.4",
+    "vite": "^5.1.5",
+    "vite-plugin-pages": "^0.32.2",
+    "vite-plugin-vue-layouts": "^0.11.0",
+    "vite-plugin-vuetify": "^2.0.3",
+    "vue-router": "^4.3.0"
+  }
+}
